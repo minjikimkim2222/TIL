@@ -21,11 +21,10 @@
 마찬가지로 배열 전체를 비교해 O(n^2)
 
 ## 3. 코드
-<pre>
-<code>
+<pre><code>
 void bubble_sort(int arr[], int size)
 {
-  for(int i = 0; i<size; i++)
+  for(int i = 0; i < size; i++)
   {
     for(int j=1; j < size-i ; j++)
       if(arr[j-1] > arr[j])
@@ -33,5 +32,5 @@ void bubble_sort(int arr[], int size)
      }
   }
 }
-</code>
-</pre>
+</code></pre>
+
