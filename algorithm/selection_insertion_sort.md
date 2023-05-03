@@ -18,9 +18,9 @@
 <code>
 void selection_sort(int arr[], int size) //배열 시작주소, 배열 크기
 {
-  for (int i=0; i<size; i++)
+  for (int i=0; i < size ; i++)
   {
-    for (int j=i+1; j<size; j++){
+    for (int j=i+1; j < size ; j++){
       if(arr[i] >= arr[j])
         swap(arr[i], arr[j]);
     }
