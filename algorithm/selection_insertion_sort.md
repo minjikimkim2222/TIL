@@ -36,9 +36,9 @@ void selection_sort(int arr[], int size) //배열 시작주소, 배열 크기
 ## 1. 기본 로직
 1. 두 번째 배열원소부터 비교를 시작한다. 이때 비교대상은 항상 현재 위치보다 앞에 있는 배열 원소들이다.
     - 예를 들어, arr[1](고정)은 arr[0]과 비교를 하고,
-    - arr[2](고정)는 arr[1]과 arr[0], arr[3](고정)은 arr[2], arr[1], arr[1]과 비교를 한다.
+    - arr[2](고정)는 arr[1]과 arr[0], arr[3](고정)은 arr[2], arr[1], arr[0]과 비교를 한다.
 2. 이렇게 마지막 배열원소까지 쭉 비교를 하다, arr[i](고정)이 비교대상(i보다 앞에 있는 원소)보다 작다면, 
-swap!
+swap! (왜냐, 오름차순으로 만드는 걸 전제로 하고 있으니..)
 
 
 ## 2. 시간 복잡도
@@ -49,7 +49,7 @@ swap!
 <code>
 void insertion_sort(int arr[], int size)
 {
-    for(int i=1; i<size; i++){
+    for(int i=1; i <size ; i++){
         int key = arr[i], j = i - 1;
         while (j >= 0 && key < arr[j]){
             swap(arr[j], arr[j+1]);
