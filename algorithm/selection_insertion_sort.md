@@ -49,13 +49,14 @@ swap! (왜냐, 오름차순으로 만드는 걸 전제로 하고 있으니..)
 <code>
 void insertion_sort(int arr[], int size)
 {
-    for(int i=1; i <size ; i++){
+    for(int i=1; i < size ; i++)
+    {
         int key = arr[i], j = i - 1;
         while (j >= 0 && key < arr[j]){
             swap(arr[j], arr[j+1]);
             j--;
-         }
-       arr[j+1] = key;
+    }
+      arr[j+1] = key;
     }
 }
 </pre>
