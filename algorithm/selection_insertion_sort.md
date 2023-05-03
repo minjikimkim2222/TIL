@@ -61,3 +61,7 @@ void insertion_sort(int arr[], int size)
 }
 </pre>
 </code>
+
+## 4. 사진
+![image](https://user-images.githubusercontent.com/96869808/235898764-8d1a5c1c-7534-4e5d-a797-6e337cdb1dc7.png)
+
