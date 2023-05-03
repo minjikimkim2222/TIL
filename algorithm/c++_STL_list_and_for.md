@@ -39,7 +39,7 @@ int main(void)
 ### 2. 리스트
 <pre>
 <code>
-list <char> li;
+list<char> li; // list<char> li; 임
 for (char temp : li)
 {
   std::cout << temp;
