@@ -8,6 +8,22 @@ list<int> L = {1,2}; 일 때,
   list<int>::iterator t = L.begin();
 
 ## 2. 예제
+  
+  
+## 3. 기타 예제 -> L.end(); 관련
+<pre>
+<code>
+    string str;
+        cin >> str;
+        for (auto temp : str) //string의 개수만큼 도는 loop
+        {
+            li.push_back(temp);
+        }
+        list<char>::iterator ptr = li.end();
+        cout <<  "first : " << *(ptr) << '\n';
+        cout <<  "second : " << *(--ptr) << '\n';
+</code>
+</pre>
 
 2.c++ 범위기반 for문 루프
 ==========
