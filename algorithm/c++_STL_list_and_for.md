@@ -1,6 +1,13 @@
 1.c++ STL -> list
 ===============
-이부분 0x04 정리 후 같이 정리!
+## 1. 종류 -> 3세트.
+list<int> L = {1,2}; 일 때, 
+### 1. L.begin(), L.end()
+### 2. L.push_front(3), L.push_back(3)
+### 3. L.insert(t, 0) / t = L.erase(t)
+  list<int>::iterator t = L.begin();
+
+## 2. 예제
 
 2.c++ 범위기반 for문 루프
 ==========
