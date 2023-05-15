@@ -69,24 +69,24 @@ void * handle_clnt(void * arg)
 	int str_len=0, i;
 	char msg[BUF_SIZE];
 	
-    // //72~88 까지 내용 추가!!!!!!! <-------------
-    //  char nickname[BUF_SIZE]; // 닉네임을 저장할 변수
+    //72~88 까지 내용 추가!!!!!!! <-------------
+     char nickname[BUF_SIZE]; // 닉네임을 저장할 변수
 
-    // // 클라이언트가 보낸 닉네임 정보를 받음
-    // str_len = read(clnt_sock, nickname, BUF_SIZE - 1);
-    // if (str_len <= 0) {
-    //     close(clnt_sock);
-    //     return NULL;
-    // }
-    // nickname[str_len] = '\0';
+    // 클라이언트가 보낸 닉네임 정보를 받음
+    str_len = read(clnt_sock, nickname, BUF_SIZE - 1);
+    if (str_len <= 0) {
+        close(clnt_sock);
+        return NULL;
+    }
+    nickname[str_len] = '\0';
 
-    // pthread_mutex_lock(&mutx);
-    // clnt_socks[clnt_cnt++] = clnt_sock; // clnt배열에 accept된 client 소켓 저장
-    // pthread_mutex_unlock(&mutx);
+    pthread_mutex_lock(&mutx);
+    clnt_socks[clnt_cnt++] = clnt_sock; // clnt배열에 accept된 client 소켓 저장
+    pthread_mutex_unlock(&mutx);
 
-    // sprintf(msg, "[%s] is connected\n", nickname);
-    // send_msg(msg, strlen(msg), clnt_sock);
-    // //
+    sprintf(msg, "[%s] is connected 여기 맞나?\n", nickname);
+    send_msg(msg, strlen(msg), clnt_sock);
+    //
 
 
 	while((str_len=read(clnt_sock, msg, sizeof(msg)))!=0) // client에게 메시지를 받음

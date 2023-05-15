@@ -46,11 +46,12 @@ int main(int argc, char *argv[])
     /*
     이 부분 수정
     // */
-    // char send_user_name[BUF_SIZE] = {0};
-    // strcpy(send_user_name, argv[3]);
-    // write(sock, send_user_name, strlen(send_user_name));
-    /////////
-    //printf("%s 님이 입장했습니다.\n", user_name);
+    char send_user_name[BUF_SIZE] = {0};
+    strcpy(send_user_name, argv[3]);
+    write(sock, send_user_name, strlen(send_user_name));
+    ///////
+    printf("%s 님이 입장했습니다.\n", send_user_name); // 추가
+	//
 	pthread_create(&snd_thread, NULL, send_msg, (void*)&sock); // thread 생성, send_msg함수로!
 	pthread_create(&rcv_thread, NULL, recv_msg, (void*)&sock);
 	pthread_join(snd_thread, &thread_return); //thread_join 함수로 순서를 기다리게 함!
@@ -68,7 +69,6 @@ void * send_msg(void * arg) // send_msg, 서버와 연결된 소켓을 받아, �
 	while(1) 
 	{
 		fgets(msg, BUF_SIZE, stdin); // stdin(키보드)로부터 입력받기
-
 		sprintf(name_msg,"%s %s", user_name, msg); // user_name과 msg를 결합한 name_msg를 write로 서버에게 보내기
 		write(sock, name_msg, strlen(name_msg));
 	}
