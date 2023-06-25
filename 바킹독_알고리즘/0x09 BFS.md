@@ -12,7 +12,7 @@
 3. 해당 칸을 이전에 방문했다면 아무것도 하지 않고, 처음으로 방문했다면 방문했다는 표시를 남기고 </br>
 해당 칸을 큐에 삽입
 4. 큐가 빌 때까지 2번 반복
--> 모든 칸이 큐에 1번씩 들어가므로, 시간복잡도는 칸이 N개일 때 : O(N)
+-> 모든 칸이 큐에 1번씩 들어가므로, 시간복잡도는 칸이 N개일 때 : O(N) </br></br>
 
 ### 참고, pair STL ###
 <pre>
@@ -41,5 +41,70 @@ int main(void){
     // pair은 알아서 앞쪽부터 대소관계 비교한 뒤, 뒤 까지 검사함
     
 }
+  </code>
+</pre>
+
+2.기본 BFS 구조 + 자주 하는 실수
+====
+
+## 2-1. 자주 하는 실수
+1. 시작점에 방문했다는 표시를 안 한다.
+     -> 그러면 쓸데없이 두 번이나 방문할 수 있다.
+2. **큐에 넣을 때 방문했다**는 표시를 하는 대신, 큐에서 빼낼 때 방문했다는 표시를 한다.
+3. 이웃한 원소가 범위를 벗어났는지에 대한 체크를 잘못한 경우.
+
+### 2-2. 기본 BFS 구조
+<pre>
+  <code>
+#include <iostream> // iostream
+#include <queue> // queue
+#include <utility> // utility
+
+using namespace std;
+
+#define X first
+#define Y second
+
+int board[502][502] =
+{{1,1,1,0,1,0,0,0,0,0},
+ {1,0,0,0,1,0,0,0,0,0},
+ {1,1,1,0,1,0,0,0,0,0},
+ {1,1,0,0,1,0,0,0,0,0},
+ {0,1,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0},
+ {0,0,0,0,0,0,0,0,0,0} }; // 1 : 파란칸 (방문가능한 곳), 0 : 빨간칸(방문 안할 곳)
+
+ bool visit[502][502]; // 해당 칸의 방문 여부를 저장
+
+ int n = 7, m = 10; // 각각 행과 열
+
+ int dx[4] = {1,0,-1,0};
+ int dy[4] = {0,1,0,-1}; // 상하좌우 네 방향
+
+ int main(void)
+ {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    queue<pair<int,int>> Q; // 좌표를 위한 좌표
+    
+    visit[0][0] = 1; // 시작지점 (0,0)을 방문했다!
+    Q.push({0,0});
+
+    while (!Q.empty()){
+        pair<int,int> cur = Q.front();
+        Q.pop();
+        cout << '(' << cur.X << ", " << cur.Y << ") -> ";
+        for (int dir = 0; dir < 4; dir++){ // 상하좌우
+            int nx = cur.X + dx[dir];
+            int ny = cur.Y + dy[dir];
+
+            if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue; // 유효한 범위가 아님(범위 밖인 경우 넘어감)
+            if (visit[nx][ny] || board[nx][ny] != 1) continue; // 이미 방문한 칸이거나, 파란 칸이 아닌 경우
+            visit[nx][ny] = 1;
+            Q.push({nx,ny});
+        }
+    }
+ }
   </code>
 </pre>
