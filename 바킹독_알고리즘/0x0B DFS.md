@@ -70,6 +70,7 @@ int n = 7, m = 10; // n : 행, m : 열
 
 2.DFS VS BFS, 실제 응용?
 ===
+![image](https://github.com/minjikimkim2222/study/assets/96869808/4c0935c6-2b14-4cc3-9006-0d2f3778c484)
 
 1. 구현 : DFS는 스택을, BFS는 큐를
 2. **방문순서[사진 참고]** :
