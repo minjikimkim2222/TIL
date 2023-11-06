@@ -37,7 +37,7 @@ Person[] person2 = {new Person(), new Person()}; // person2 ==> Person[2] { Pers
 - Arrays : Java 표준 라이브러리에 포함된 **클래스**. 배열과 관련된 유용한 **메서드** 제공.
 #### Arrays 정적 메소드
 1. toString()
-  - 파라미터로 지정된 배열의 내용을 문자열(String)타입으로 반환하는 메서드
+  - 파라미터로 지정된 **배열**의 내용을 문자열(String)타입으로 반환하는 메서드
   - 코드
     ``` java
     int[] marks = {1,2,3,4,5};
@@ -113,4 +113,26 @@ Person[] person2 = {new Person(), new Person()}; // person2 ==> Person[2] { Pers
 </br>
 
 ## 2) 가변인자
+### 가변인자 등장이유, 개념
+- 고정인자가 아닌 **가변인자**이다. 즉, 1개의 인자도 넣고 싶고, 2개의 인자, 3개의 인자, .. 등등을 넣고 싶다.
+- 단, java에서 가변인자는 하나의 메서드에 대해 **하나**의 타입만 허용.
+### 만드는 법
+- 메서드의 **파라미터에서만** 사용 가능.
+- 가변인자는 **array**로 처리가 된다.
+- 가변인자는 **맨 마지막 자리**에, **딱 한 개**만 가능.
+``` java
+void print(char c, int... values) {
+     System.out.println("char : " + c + ", values : " + Arrays.toString(values));
+} // values 매개변수가 가변인자 int... 타입이므로, "values는 정수 배열" 로 처리가 된다.
+
+print('a', 1);
+// char : a, values : [1]
+
+print('b', 1, 2, 3);
+// char : b, values : [1, 2, 3]
+
+print('b', 1, 2, 3, 56);
+// char : b, values : [1, 2, 3, 56]
+```
+
 ## 3) ArrayList
