@@ -136,3 +136,7 @@ print('b', 1, 2, 3, 56);
 ```
 
 ## 3) ArrayList
+### 기존 array 문제점
+### ArrayList 만드는 법
+### ArrayList의 메서드 - add, remove, size
+### ArrayList는 Collection의 일부이다. 후에 컬렉션에서 자세히 배울 것.
