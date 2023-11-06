@@ -92,6 +92,40 @@ Animal cat = new Animal(15);
   ```
 
 ## 3) Wrapper 클래스
+### Wrapper 클래스 등장 이유
+- Wrapper class는 Primitive 자료형을 감싸서, Reference types으로 만든다.
+- 즉, Primitive 자료형을 감싸, 객체 형태로 만들어, Primitive 자료형에서는 이용할 수 없었던 **메서드 이용**이 가능해진다.
+  	``` java
+   	Integer i1 = 5;
+   	Integer i2 = Integer.valueOf(5);
 
-## 4) 기타
-### 이클립스, 자바 API 탐색
+   	i1.equals(i2); // true
+   	```
+### Types
+- Wrapper : Boolean, Byte, Character, Double, Float, Integer, Long, Short
+- Primitive : boolean, byte, char, double, float, int, long, short
+### Wrapper class로 만드는 법 - 자동변환, valueOf()함수, 생성자
+```java
+
+Integer i1= 5; // 1
+
+Integer i2 = Integer.valueOf(5); // 2
+
+Integer i3 = new Integer(5); // 3
+
+```
+- 생성자 vs valueOf() 함수 중, 어느 것이 더 효율적? -> valueOf()
+	- new 연산자를 이용해 매번 새로운 객체를 만들기보다는, </br>
+          valueOf()메서드를 이용해 저장하는 값이 같다면, Heap 안에 존재하는 객체를 다시 사용.
+- 어차피 자동변환되기에 1번 코드처럼 써도 됨.
+### Wrapper class를 다시 Primitive class로 되돌리는 법 - 자료형Value(), 자동변환
+``` java
+Float f1 = Float.valueOf(5.0f);
+		
+float f2 = f1.floatValue();
+		
+Float f3 = 5.2f;
+		
+System.out.println(f3.equals(f2));
+```
+- 자동으로 변환해주기에, 자료형만 Float인지 float인지만 주의해주면 된다.
