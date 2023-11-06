@@ -87,6 +87,29 @@ Person[] person2 = {new Person(), new Person()}; // person2 ==> Person[2] { Pers
         // arr ==> int[5] {100, 100, 100, 100, 100}
         ```
    </details>
+   <details>
+     <summary>sort 메서드</summary>
+
+      - Arrays.sort() 메서드 : </br>
+          - input : 정렬할 배열, output : void형
+          - 배열의 요소를 오름차순으로 정렬한다. 이 메서드는 다양한 타입의 배열을 정렬하기 위해 overload 되어있다.
+      - 코드 예시
+        ``` java
+        int[] arr = {10 , 2, 4, 90, 2};
+        // arr ==> int[5] { 10, 2, 4, 90, 2 }
+        Arrays.sort(arr);
+        arr
+        // int[5] { 2, 2, 4, 10, 90 }
+
+        String[] arr2 = {"abd", "abc", "gdc", "bds"};
+        // arr2 ==> String[4] { "abd", "abc", "gdc", "bds" }
+        Arrays.sort(arr2);
+        arr2
+        // arr2 ==> String[4] { "abc", "abd", "bds", "gdc" }
+
+        
+        ```
+   </details>
 </br>
 
 ## 2) 가변인자
