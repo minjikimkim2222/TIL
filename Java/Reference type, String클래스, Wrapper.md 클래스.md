@@ -67,6 +67,29 @@ Animal cat = new Animal(15);
 </br>
 
 ## 2) String 클래스
+- String은 사실, class의 instance이다!
+- String은 불변 객체이다.
+- 예시
+  ```java
+   public class StringRunner {
+
+	    public static void main(String[] args) {
+		   System.out.println("test".charAt(1)); // e
+		
+		   String s = "minji";
+		
+		   System.out.println(s.length()); // 5
+		
+		   System.out.println("kim ".concat(s)); //Kim minji 
+		
+		   System.out.println(s); // minji, String은 불변 객체
+		
+		   String[] array = "010-xyxy-dzz".split("-");
+		
+		   System.out.println("array[0] : " + array[0] + " , array[1] : " + array[1] + " ,     array[2] : " + array[2]);
+	      } // array[0] : 010 , array[1] : xyxy , array[2] : dzz
+    }
+  ```
 
 ## 3) Wrapper 클래스
 
