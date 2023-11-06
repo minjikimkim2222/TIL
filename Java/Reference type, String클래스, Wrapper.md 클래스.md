@@ -5,10 +5,10 @@
 - Primitive type을 제외한 모든 type
 - 내가 만든 class, java에 predefined class (String, BigDecimal ..)
 ### 메모리
-- 자바 프로그램이 실행될 때, 메모리는 크게 두 종류. **stack**과 **heap** </br>
+- 자바 프로그램이 실행될 때, 메모리는 크게 두 종류. **stack**과 **heap**
   **Primitive type**은 stack에 저장되지만, reference type은 다르다.
-- "**실제**" 객체 정보는 Heap에 저장되고 </br>
-  **객체가 저장된 경로**(메모리주소; 참조)는 해당 객체변수의 "값"에 저장됨.
+- "**실제**" 객체 데이터는 Heap에 저장되고 </br>
+  **객체가 메모리 주소**, 즉 참조는 해당 객체변수의 "값"에 저장됨.
 - 예시
 ```java
 int i = 5;
@@ -32,6 +32,7 @@ Animal cat = new Animal(15);
 
 ### assignment
 - Reference type의 assignment는 실제 값이 아니라, 객체의 메모리주소를 할당한다.
+- Primitive type의 assignment는 실제 값이 저장되는 반면...
 <details>
   <summary>reference type의 할당</summary>
 
@@ -39,9 +40,32 @@ Animal cat = new Animal(15);
   - nothing => null, nothing변수의 값에 원래 객체의 메모리주소가 있어야 하지만, 비어있다는 의미.
   - 그런데, cat"값" == AnimalCat의 메모리주소값이, nothing에 할당됨
   - 즉, nothing과 cat은 모두 똑같은 위치의 객체(Animal Cat)을 가리키고 있다.
-</details>
+</details> 
 
 ### 비교연산자(==)
+- Reference type의 ==가 비교하는 것은 값이 아닌 객체
+- primitive type의 ==가 실제 값을 비교하는 것과 반면...
+  
+<details>
+ <summary>예시</summary>
+
+  ```java
+  Animal dog = new Animal(12);
+  // dog ==> Animal@6acbcfc0
+
+  Animal cat = new Animal(10);`
+  // cat ==> Animal@3feba861
+
+  Animal ref = cat;`
+  // ref ==> Animal@3feba861
+
+  Animal dog2 = new Animal(12);
+  // dog2 ==> Animal@723279cf
+  ```
+</details>
+
+</br>
+
 ## 2) String 클래스
 
 ## 3) Wrapper 클래스
