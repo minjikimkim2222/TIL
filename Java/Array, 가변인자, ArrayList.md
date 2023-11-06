@@ -137,6 +137,39 @@ print('b', 1, 2, 3, 56);
 
 ## 3) ArrayList
 ### 기존 array 문제점
+- array는 한번 선언하면, 배열의 크기를 바꿀 수 없다. </br>
+  따라서, 하나의 원소를 추가하거나 삭제할 때마다 새로운 배열을 만들 수밖에 없고, 이는 굉장히 비효율적이다. </br>
+  이에, ArrayList가 등장했다.
+- ArrayList 또한 자바에 내장된 **클래스**이기에, 다양한 **메서드**를 이용한다.
 ### ArrayList 만드는 법
+``` java
+ArrayList<Integer> arrayList = new ArrayList<Integer>();
+// arrayList ==> []
+```
 ### ArrayList의 메서드 - add, remove, size
+코드
+``` java
+ArrayList<String> items = new ArrayList<String>();
+// items ==> []
+
+items.add("apple");
+// $62 ==> true
+
+items.add("banana");
+// $63 ==> true
+
+System.out.println(items[1]);
+/*
+|  Error:
+|  array required, but java.util.ArrayList<java.lang.String> found
+|  System.out.println(items[1]);
+|                     ^------^
+*/
+System.out.println(items.get(1));
+// banana
+
+items.remove(0);
+System.out.println(items);
+// [banana]
+```
 ### ArrayList는 Collection의 일부이다. 후에 컬렉션에서 자세히 배울 것.
