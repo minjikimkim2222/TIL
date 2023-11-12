@@ -104,3 +104,15 @@
 4. java파일은 다시, .class 파일로 컴파일된다.
 5. execute(실행)을 통해 HTML 파일을 생성해 JSP 컨테이너에게 전달한다.
 6. JSP는 HTTP 프로토콜을 통해, HTML 페이지를 클라이언트에게 전달한다.
+   
+
+### 기타
+<details>
+  <summary>WAS tomcat의 명령어</summary>
+
+  ./startup.sh를 실행하면 Tomcat 서버가 시작됩니다. Tomcat은 Java Servlet 및 JavaServer Pages(JSP)를 실행하기 위한 오픈 소스 웹 어플리케이션 서버입니다. startup.sh 스크립트는 Tomcat을 시작하는 데 사용됩니다. </br>
+
+일반적으로 ./startup.sh를 실행하면 Tomcat 서버가 시작되고, 기본적으로 8080 포트에서 웹 어플리케이션이 제공됩니다. 웹 브라우저에서 http://localhost:8080을 열면 Tomcat의 기본 페이지나 배포된 웹 어플리케이션에 접속할 수 있습니다. </br>
+
+반대로 ./shutdown.sh를 실행하면 Tomcat 서버가 정상적으로 종료됩니다. 종료 과정에서 현재 실행 중인 웹 어플리케이션들이 정상적으로 종료되고 서버 프로세스가 중지됩니다. </br>
+</details>
