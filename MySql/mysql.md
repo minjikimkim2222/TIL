@@ -19,3 +19,20 @@ SHOW DATABASE;
     USE [데이터베잉스명];
     ```
   - table 생성
+
+### 테이블 생성
+```sql
+CREATE TABLE [테이블명];
+```
+```sql
+CREATE TABLE professor
+(
+  id INT PRIMARY KEY,
+  name VARCHAR(32) NOT NULL,
+  phone VARCHAR(32)
+);
+DESCRIBE professor;
+```
+  - primary key 특징 : 데이터베이스 테이블마다 각 행을 고유하게 식별해주는 열
+    - 고유성 : 테이블 내의 각 행마다 유일해야 한다. 즉, 어떤 두행에서도 동일한 키값을 가질 수 없다.
+    - NOT NULL
