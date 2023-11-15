@@ -36,3 +36,26 @@ DESCRIBE professor;
   - primary key 특징 : 데이터베이스 테이블마다 각 행을 고유하게 식별해주는 열
     - 고유성 : 테이블 내의 각 행마다 유일해야 한다. 즉, 어떤 두행에서도 동일한 키값을 가질 수 없다.
     - NOT NULL
+
+### 데이터 삽입 (INSERT)
+```sql
+INSERT INTO professor
+(id, name, phone(
+VALUES ('19', '현지', '01112344555');
+```
+
+### 데이터 검색 (SELECT)
+- SELECT 뜻
+  - 원하는 데이터의 칼럼을 선택하거나, 레코드의 순서 지정 가능
+
+```sql
+SELECT * FROM professor;
+SELECT * FROM professor ORDER BY id;
+```
+
+### 데이터 조건 선택 (WHERE)
+```sql
+SELECT id,name FROM professor WHERE id = '19';
+SELECT * FROM professor WHERE id >= 19 AND id < 23;
+SELECT * FROM professor WHERE id > 20 OR id < 23;
+```
