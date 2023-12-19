@@ -213,7 +213,8 @@ int result = pstmt.executeUpdate();
 
 ResultSet은 executeQuery()메서드에서 실행된 select문의 결과값을 가지고 있는 객체이다.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/f2d30063-d2b0-4fd6-a305-b7bbde8dbab0/06383544-e1f7-4985-ad40-8b470ec1819c/Untitled.png)
+![image](https://github.com/minjikimkim2222/TIL/assets/96869808/d3129f59-9292-4b34-9bb1-d4316ff47b55)
+
 
 ResultSet 객체가 가지고 있는 select 결과값은 ResultSet 객체의 메서드를 활용해 추출해 사용한다. 
 
