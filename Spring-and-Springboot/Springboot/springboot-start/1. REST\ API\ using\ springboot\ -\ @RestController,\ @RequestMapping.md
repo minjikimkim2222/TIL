@@ -38,7 +38,7 @@ HTTP client는 서버에게 **HTTP request**를 보내고, HTTP server는 클라
 
 JSON 파일 형식이다.
 
-![Alt text](image.png)
+![Alt text](/images/image.png)
 
 ## @RestController와 @RequestMapping
 
